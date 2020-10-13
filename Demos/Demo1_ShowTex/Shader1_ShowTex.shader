@@ -21,26 +21,26 @@
 
             struct a2v
             {
-                float4 _vertex : POSITION;
-                float2 _uv : TEXCOORD0;
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
                 
             };
             struct v2f
             {
-                float4 _vertex : SV_POSITION;
-                float2 _uv : TEXCOORD0;
+                float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
             };
 
             v2f vert(a2v input)
             {
                 v2f output;
-                output._vertex = UnityObjectToClipPos(input._vertex);
-                output._uv = input._uv;
+                output.vertex = UnityObjectToClipPos(input.vertex);
+                output.uv = input.uv;
                 return output;
             }
             fixed4 frag(v2f input) : SV_Target
             {
-                return _Color * tex2D(_MainTex, input._uv);
+                return _Color * tex2D(_MainTex, input.uv);
             }
 
             ENDCG

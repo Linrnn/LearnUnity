@@ -24,30 +24,30 @@
 
             struct a2v
             {
-                float4 _vertex : POSITION;
-                float2 _uv : TEXCOORD0;
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
                 
             };
             struct v2f
             {
-                float4 _vertex : SV_POSITION;
-                float2 _uv : TEXCOORD0;
+                float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
             };
 
             v2f vert(a2v input)
             {
                 v2f output;
-                float4 pos = input._vertex;
+                float4 pos = input.vertex;
                 float dis = distance(pos, 0);
                 float dSin = sin(dis + _Time.y * _Speed);
                 pos.y = dSin * _Height;
-                output._vertex = UnityObjectToClipPos(pos);
-                output._uv = input._uv;
+                output.vertex = UnityObjectToClipPos(pos);
+                output.uv = input.uv;
                 return output;
             }
             fixed4 frag(v2f input) : SV_Target
             {
-                return _Color * tex2D(_MainTex, input._uv);
+                return _Color * tex2D(_MainTex, input.uv);
             }
 
             ENDCG
