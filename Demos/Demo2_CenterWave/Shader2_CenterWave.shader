@@ -1,4 +1,4 @@
-﻿Shader "Custom/_Shader2"
+﻿Shader "Demo/Center Wave"
 {
     Properties
     {
