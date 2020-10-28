@@ -2,10 +2,10 @@
 {
     Properties
     {
-        _Height ("Height", Range(0.01 ,100)) = 1
-        _Speed ("Speed", Range(0.01 ,100)) = 1
-        _Color ("Color", Color) = (1,1,1,1)
         _MainTex("Albedo (RGB)", 2D) = "white" {}
+        _Height ("Height", Range(0.01, 100)) = 1
+        _Speed ("Speed", Range(0.01, 100)) = 1
+        _Color ("Color", Color) = (1, 1, 1, 1)
     }
 
     SubShader
@@ -13,20 +13,19 @@
         Pass
         {
             CGPROGRAM
-     
+
             #pragma vertex vert
             #pragma fragment frag
-
+            
+            sampler2D _MainTex;
             float _Height;
             float _Speed;
             fixed4 _Color;
-            sampler2D _MainTex;
 
             struct a2v
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
-                
             };
             struct v2f
             {

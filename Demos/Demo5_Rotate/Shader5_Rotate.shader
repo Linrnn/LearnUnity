@@ -2,8 +2,8 @@
 {
     Properties
     {
-        _Speed ("Speed", Range(-10 ,10)) = 1
         _MainTex("Albedo (RGB)", 2D) = "white" {}
+        _Speed ("Speed", Range(-10 ,10)) = 1
     }
 
     SubShader
@@ -11,12 +11,12 @@
         Pass
         {
             CGPROGRAM
-     
+
             #pragma vertex vert
             #pragma fragment frag
-
-            float _Speed;
+            
             sampler2D _MainTex;
+            float _Speed;
 
             struct a2v
             {

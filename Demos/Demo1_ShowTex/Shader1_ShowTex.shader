@@ -2,8 +2,8 @@
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
         _MainTex("Albedo (RGB)", 2D) = "white" {}
+        _Color ("Color", Color) = (1, 1, 1, 1)
     }
 
     SubShader
@@ -11,19 +11,17 @@
         Pass
         {
             CGPROGRAM
-     
+
             #pragma vertex vert
             #pragma fragment frag
-            //#include "UnityCG.cginc"
-
-            fixed4 _Color;
+            
             sampler2D _MainTex;
+            fixed4 _Color;
 
             struct a2v
             {
                 float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                
+                float2 uv : TEXCOORD0;         
             };
             struct v2f
             {

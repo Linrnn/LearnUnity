@@ -2,10 +2,10 @@
 {
     Properties
     {
-        _Speed ("Speed", Range(0.01 ,100)) = 1
-        _Color ("Color", Color) = (1,1,1,1)
         _MainTex("Albedo (RGB)", 2D) = "white" {}
         _SubTex("Albedo (RGB)", 2D) = "white" {}
+        _Speed ("Speed", Range(0.01 ,100)) = 1
+        _Color ("Color", Color) = (1, 1, 1, 1)
     }
 
     SubShader
@@ -13,7 +13,7 @@
         Pass
         {
             CGPROGRAM
-     
+
             #pragma vertex vert
             #pragma fragment frag
 
